@@ -7,58 +7,148 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      font-size: 16px;
       margin: 0;
       padding: 0;
       background-color: #ffffff;
       color: #222;
       line-height: 1.6;
     }
+
     header, section {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
+
     header {
       background-color: #292d3e;
       color: white;
       text-align: center;
     }
-    header h1 {
-      margin-bottom: 10px;
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 250px;
     }
-    header p {
-      font-size: 1.2em;
-    }
+
     h2 {
       border-bottom: 2px solid #ddd;
       padding-bottom: 10px;
       margin-top: 40px;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
+
     table, th, td {
       border: 1px solid #ccc;
     }
+
     th, td {
       padding: 12px;
       text-align: center;
     }
+
     footer {
       background-color: #292d3e;
       color: white;
       text-align: center;
       padding: 20px;
     }
+
     a {
       color: #0077cc;
     }
-    .logo {
-      display: block;
-      margin: 0 auto 20px;
-      max-width: 250px;
+
+    /* Responsive Typography & Layout */
+    @media screen and (max-width: 768px) {
+      header, section {
+        padding: 20px 10px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p, h2, ul li, p, td, th {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Gallery Flex Layout */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery img {
+      flex: 1 1 calc(50% - 10px);
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .gallery img {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Form Styling */
+    form div {
+      margin-bottom: 15px;
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #292d3e;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3f4461;
+    }
+
+    /* FAQ Accordion Styling */
+    details {
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      padding: 12px;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+      transition: box-shadow 0.3s ease;
+    }
+
+    details:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    summary::marker {
+      content: "❓ ";
     }
   </style>
 </head>
@@ -74,15 +164,15 @@
     <p>
       At <strong>ProColors Custom Gear</strong>, we bring your vision to life with high-quality custom printing on apparel and uniforms. Whether you're repping your team, business, or personal brand, our vibrant prints and precision application deliver standout results every time. Based in Savannah, GA, we specialize in <strong>DTF (Direct-to-Film)</strong> and <strong>vinyl prints</strong>, sublimation, and full team uniform sets — no job too big or too small.
     </p>
-    
+  </section>
+
   <section>
     <h2>What We Do</h2>
     <ul>
       <li><strong>Customer-Supplied Apparel Printing:</strong> Already have your own shirts, jerseys, or hoodies? Drop them off and let us apply custom designs with pro-level quality.</li>
       <li><strong>Full-Service Printing (We Supply Apparel):</strong> Need the full package? We'll order quality blanks and print them just the way you want.</li>
       <li><strong>Team Uniforms & Group Orders:</strong> Sports teams, schools, businesses — we handle bulk orders, numbering, and matching sets.</li>
-      <li><strong>Standard turnaround time:</strong> 3–7 business days.
-        
+      <li><strong>Standard turnaround time:</strong> 3–7 business days.</li>
       <li><strong>Rush Orders Available:</strong> Need it fast? We offer 24–48 hour turnaround for select orders.</li>
     </ul>
   </section>
@@ -130,49 +220,48 @@
   </section>
 
   <section>
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x300?text=Design+1" alt="Sample 1">
-    <img src="https://via.placeholder.com/300x300?text=Design+2" alt="Sample 2">
-    <img src="https://via.placeholder.com/300x300?text=Design+3" alt="Sample 3">
-    <img src="https://via.placeholder.com/300x300?text=Design+4" alt="Sample 4">
-  </div>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x300?text=Design+1" alt="Sample 1">
+      <img src="https://via.placeholder.com/300x300?text=Design+2" alt="Sample 2">
+      <img src="https://via.placeholder.com/300x300?text=Design+3" alt="Sample 3">
+      <img src="https://via.placeholder.com/300x300?text=Design+4" alt="Sample 4">
+    </div>
   </section>
 
   <section>
-  <h2>Place an Order</h2>
-  <form method="post" enctype="multipart/form-data">
-    <div>
-      <input type="text" name="name" placeholder="Your Full Name" required>
-    </div>
-    <div>
-      <textarea name="details" placeholder="Design details, sizes, colors..." rows="5" required></textarea>
-    </div>
-    <div>
-      <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div>
-      <select name="garment">
-        <option value="">Select Garment Type</option>
-        <option value="Shirt">Shirt</option>
-        <option value="Jersey">Jersey</option>
-        <option value="Hoodie">Hoodie</option>
-        <option value="Warm-Ups">Warm-Ups</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div>
-      <input type="number" name="quantity" placeholder="Quantity" min="1" required>
-    </div>
-    <div>
-      <input type="file" name="upload" accept="image/*,.pdf">
-    </div>
-    <div>
-      <button type="submit">Submit Order</button>
-    </div>
-  </form>
-</section>
-
+    <h2>Place an Order</h2>
+    <form method="post" enctype="multipart/form-data">
+      <div>
+        <input type="text" name="name" placeholder="Your Full Name" required>
+      </div>
+      <div>
+        <textarea name="details" placeholder="Design details, sizes, colors..." rows="5" required></textarea>
+      </div>
+      <div>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div>
+        <select name="garment" required>
+          <option value="">Select Garment Type</option>
+          <option value="Shirt">Shirt</option>
+          <option value="Jersey">Jersey</option>
+          <option value="Hoodie">Hoodie</option>
+          <option value="Warm-Ups">Warm-Ups</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+      </div>
+      <div>
+        <input type="file" name="upload" accept="image/*,.pdf">
+      </div>
+      <div>
+        <button type="submit">Submit Order</button>
+      </div>
+    </form>
+  </section>
 
   <section>
     <h2>Contact Us</h2>
@@ -182,6 +271,34 @@
       <li><strong>Call or Text:</strong> (912) 555-1234</li>
       <li><strong>Instagram:</strong> <a href="https://instagram.com/procolorsgear" target="_blank">@procolorsgear</a></li>
     </ul>
+  </section>
+
+  <section>
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What materials do you print on?</summary>
+      <p>We print on cotton, polyester, blends, performance fabrics, and fleece. Have something unique? Send it our way—we'll let you know if it's compatible.</p>
+    </details>
+    <details>
+      <summary>What’s the average turnaround time?</summary>
+      <p>Standard orders take 3–7 business days. Rush service (24–48 hours) is available on select items for an additional fee.</p>
+    </details>
+    <details>
+      <summary>Do you offer bulk pricing?</summary>
+      <p>Absolutely! Tiered discounts available for large orders, schools, teams, and organizations. Contact us for a custom quote.</p>
+    </details>
+    <details>
+      <summary>Can I bring my own garments?</summary>
+      <p>Yes! We're happy to print on customer-supplied apparel. Make sure it's clean—our team will inspect it upon drop-off.</p>
+    </details>
+    <details>
+      <summary>What kind of prints do you offer?</summary>
+      <p>DTF (Direct-to-Film), vinyl heat transfer, sublimation, and more. Full-color, single-color, reversible designs—you name it.</p>
+    </details>
+    <details>
+      <summary>What if I need help designing?</summary>
+      <p>We offer basic design assistance. For custom logos or advanced artwork, we’ll walk you through upgrade options.</p>
+    </details>
   </section>
 
   <footer>
