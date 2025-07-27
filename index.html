@@ -143,6 +143,7 @@
   <h2>Place an Order</h2>
   <form method="post" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Your Full Name" required>
+    <textarea name="details" placeholder="Design details, sizes, colors..." rows="5" required></textarea>
     <input type="email" name="email" placeholder="Your Email" required>
     <select name="garment">
       <option value="">Select Garment Type</option>
@@ -153,7 +154,7 @@
       <option value="Other">Other</option>
     </select>
     <input type="number" name="quantity" placeholder="Quantity" min="1" required>
-    <textarea name="details" placeholder="Design details, sizes, colors..." rows="5" required></textarea>
+    
     <input type="file" name="upload" accept="image/*,.pdf">
     <button type="submit">Submit Order</button>
   </form>
