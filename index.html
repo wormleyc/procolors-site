@@ -142,23 +142,37 @@
   <section>
   <h2>Place an Order</h2>
   <form method="post" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Your Full Name" required>
-    <textarea name="details" placeholder="Design details, sizes, colors..." rows="5" required></textarea>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <select name="garment">
-      <option value="">Select Garment Type</option>
-      <option value="Shirt">Shirt</option>
-      <option value="Jersey">Jersey</option>
-      <option value="Hoodie">Hoodie</option>
-      <option value="Warm-Ups">Warm-Ups</option>
-      <option value="Other">Other</option>
-    </select>
-    <input type="number" name="quantity" placeholder="Quantity" min="1" required>
-    
-    <input type="file" name="upload" accept="image/*,.pdf">
-    <button type="submit">Submit Order</button>
+    <div>
+      <input type="text" name="name" placeholder="Your Full Name" required>
+    </div>
+    <div>
+      <textarea name="details" placeholder="Design details, sizes, colors..." rows="5" required></textarea>
+    </div>
+    <div>
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div>
+      <select name="garment">
+        <option value="">Select Garment Type</option>
+        <option value="Shirt">Shirt</option>
+        <option value="Jersey">Jersey</option>
+        <option value="Hoodie">Hoodie</option>
+        <option value="Warm-Ups">Warm-Ups</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div>
+      <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+    </div>
+    <div>
+      <input type="file" name="upload" accept="image/*,.pdf">
+    </div>
+    <div>
+      <button type="submit">Submit Order</button>
+    </div>
   </form>
-  </section>
+</section>
+
 
   <section>
     <h2>Contact Us</h2>
